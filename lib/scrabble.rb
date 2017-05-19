@@ -1,10 +1,12 @@
 class Scrabble
 
   def score(word)
-    word.downcase.each do |letter|
+    word.downcase.chars.each do |letter|
       point_values.each do |key, value|
         if key.include?(letter)
-          return point_values.key(value).to_s
+          point = letter
+          point = point.gsub(letter, value)
+          point += point
         end
       end
     end
