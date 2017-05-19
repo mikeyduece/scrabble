@@ -1,7 +1,13 @@
 class Scrabble
 
   def score(word)
-    1
+    word.downcase.chars.each do |letter|
+      point_values.each do |key, value|
+        if key[value].to_s == letter
+          return key.values(letter)
+        end
+      end
+    end
   end
 
   def point_values
