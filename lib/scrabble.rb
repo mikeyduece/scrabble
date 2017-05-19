@@ -1,10 +1,10 @@
 class Scrabble
 
   def score(word)
-    word.downcase.chars.each do |letter|
+    word.downcase.each do |letter|
       point_values.each do |key, value|
-        if key[value].to_s == letter
-          return key.values(letter)
+        if key.include?(letter)
+          return point_values.key(value).to_s
         end
       end
     end
