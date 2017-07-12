@@ -9,6 +9,11 @@ class Scrabble
     point
   end
 
+  def score_with_multipliers(word, multipliers)
+    scored = score(word)
+    
+  end
+
   def point_values
     {
       "A"=>1, "B"=>3, "C"=>3, "D"=>2,
