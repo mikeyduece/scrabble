@@ -29,9 +29,13 @@ class ScrabbleTest < Minitest::Test
     game = Scrabble.new
     assert_equal 9, game.score_with_multipliers('hello', [1,2,1,1,1])
   end
+
+  def test_it_can_multiply_the_multiplier
+    game = Scrabble.new
+    actual = game.score_with_multipliers('hello', [1,2,1,1,1], 2)
+    assert_equal 18, actual
+  end
 end
-# > game.score_with_multipliers('hello', [1,2,1,1,1])
-# => 9
 # > game.score_with_multipliers('hello', [1,2,1,1,1], 2)
 # => 18
 # > game.score_with_multipliers('sparkle', [1,2,1,3,1,2,1], 2)
