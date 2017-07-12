@@ -10,8 +10,13 @@ class Scrabble
   end
 
   def score_with_multipliers(word, multipliers)
-    scored = score(word)
-    
+    word.upcase.chars.map.with_index do |letter, index|
+      multipliers.map.with_index do |number, num_index|
+        if num_index == index
+          point_values[letter] * number
+        end
+      end.compact
+    end.flatten.reduce(:+)
   end
 
   def point_values
