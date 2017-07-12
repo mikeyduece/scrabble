@@ -9,7 +9,7 @@ class Scrabble
     point
   end
 
-  def score_with_multipliers(word, multipliers)
+  def score_with_multipliers(word, multipliers, extra=0)
     scored = word.upcase.chars.map.with_index do |letter, index|
       multipliers.map.with_index do |number, num_index|
         if num_index == index
