@@ -17,6 +17,7 @@ class Scrabble
         end
       end.compact
     end.flatten.reduce(:+)
+    (scored += 10) if word.length > 6
     scored * extra
   end
 

@@ -35,9 +35,13 @@ class ScrabbleTest < Minitest::Test
     actual = game.score_with_multipliers('hello', [1,2,1,1,1], 2)
     assert_equal 18, actual
   end
+
+  def test_it_can_extra_multiply_with_differnt_word
+    game = Scrabble.new
+    actual = game.score_with_multipliers('sparkle', [1,2,1,3,1,2,1], 2)
+    assert_equal 58, actual
+  end
 end
-# > game.score_with_multipliers('hello', [1,2,1,1,1], 2)
-# => 18
 # > game.score_with_multipliers('sparkle', [1,2,1,3,1,2,1], 2)
 # => 58
 # ```
